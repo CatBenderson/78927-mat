@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+
+<script>
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myFunction(this);
+    }
+};
+xhttp.open("GET", "factura2.xml", true);
+xhttp.send();
+
+function myFunction(xml) {
+    var xmlDoc = xml.responseXML;
+    console.log(xmlDoc);
+    document.getElementById("demo").innerHTML = "re="+
+    xmlDoc.getElementsByTagName("cfdi:Emisor")[0].getAttribute("Rfc")+"&rr="+
+    xmlDoc.getElementsByTagName("cfdi:Receptor")[0].getAttribute("Rfc")+"&tt="+
+    xmlDoc.getElementsByTagName("cfdi:Comprobante")[0].getAttribute("Total")+"&id="+
+    xmlDoc.getElementsByTagName("tfd:TimbreFiscalDigital")[0].getAttribute("UUID")
+}
+</script>
+
+</body>
+</html>
