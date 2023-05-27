@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    targetNamespace="https://t4is.uv.mx/personal"
+    xmlns:tns="https://t4is.uv.mx/personal"
+    elementFormDefault="qualified">
+
+    <xs:element name="CreatePersonalRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nombre" type="xs:string" />
+                <xs:element name="cargo" type="xs:string" />
+                <xs:element name="experiencia" type="xs:int" />
+                <xs:element name="salario" type="xs:float" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="CreatePersonalResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="respuesta" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="UpdatePersonalRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int" />
+                <xs:element name="nombreNew" type="xs:string" />
+                <xs:element name="cargoNew" type="xs:string" />
+                <xs:element name="experienciaNew" type="xs:int" />
+                <xs:element name="salarioNew" type="xs:float" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="UpdatePersonalResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="respuesta" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ReadPersonalOneRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="ReadPersonalOneResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="respuesta" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="ReadPersonalRequest">
+    </xs:element>
+
+    <xs:element name="ReadPersonalResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="respuesta" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="DeletePersonalRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DeletePersonalResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="respuesta" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

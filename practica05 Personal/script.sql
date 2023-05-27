@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS personal;
+USE personal;
+CREATE USER IF NOT EXISTS 'personal'@'127.0.0.1' IDENTIFIED BY 'personal';
+GRANT ALL PRIVILEGES ON personal.* TO 'personal'@'127.0.0.1';
+FLUSH PRIVILEGES;

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <input id="input" type="number">
+        <button onclick="buscar(document.getElementById('input').value)">Solicitar</button>
+    </div>
+    <div>
+        <h1>Detalles de especie</h1>
+        <h2>Nombre:</h2>
+        <h4 id="nombre"></h4>
+        <h2>Clasificación:</h2>
+        <h4 id="clasificacion"></h4>
+        <h2>Altura:</h2>
+        <h4 id="altura"></h4>
+        <h2>Esperanza de vida: </h2>
+        <h4 id="vida"></h4>
+        <h2>Lenguaje: </h2>
+        <h4 id="lenguaje"></h4>
+        <h2>Hogar: </h2>
+        <a id="hogar" href="/"></a>
+    </div>
+</body>
+
+</html>

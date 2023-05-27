@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bindings version="2.1" xmlns="http://java.sun.com/xml/ns/jaxb">
+  <!--
+
+Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.2 
+Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2023.04.12 a las 07:02:11 PM CST 
+
+  -->
+  <bindings scd="x-schema::tns" xmlns:tns="https://t4is.uv.mx/personal">
+    <schemaBindings map="false">
+      <package name="https.t4is_uv_mx.personal"/>
+    </schemaBindings>
+    <bindings scd="tns:CreatePersonalRequest">
+      <class ref="https.t4is_uv_mx.personal.CreatePersonalRequest"/>
+    </bindings>
+    <bindings scd="tns:CreatePersonalResponse">
+      <class ref="https.t4is_uv_mx.personal.CreatePersonalResponse"/>
+    </bindings>
+    <bindings scd="tns:UpdatePersonalRequest">
+      <class ref="https.t4is_uv_mx.personal.UpdatePersonalRequest"/>
+    </bindings>
+    <bindings scd="tns:UpdatePersonalResponse">
+      <class ref="https.t4is_uv_mx.personal.UpdatePersonalResponse"/>
+    </bindings>
+    <bindings scd="tns:ReadPersonalOneRequest">
+      <class ref="https.t4is_uv_mx.personal.ReadPersonalOneRequest"/>
+    </bindings>
+    <bindings scd="tns:ReadPersonalOneResponse">
+      <class ref="https.t4is_uv_mx.personal.ReadPersonalOneResponse"/>
+    </bindings>
+    <bindings scd="tns:ReadPersonalResponse">
+      <class ref="https.t4is_uv_mx.personal.ReadPersonalResponse"/>
+    </bindings>
+    <bindings scd="tns:DeletePersonalRequest">
+      <class ref="https.t4is_uv_mx.personal.DeletePersonalRequest"/>
+    </bindings>
+    <bindings scd="tns:DeletePersonalResponse">
+      <class ref="https.t4is_uv_mx.personal.DeletePersonalResponse"/>
+    </bindings>
+  </bindings>
+</bindings>
+

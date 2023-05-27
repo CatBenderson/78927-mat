@@ -1,29 +1,58 @@
 <!DOCTYPE html>
 <html>
+
 <body>
 
-<p id="demo"></p>
+    <p id="demo"></p>
 
-<script>
-var xhttp = new XMLHttpRequest();
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        myFunction(this);
-    }
-};
-xhttp.open("GET", "factura2.xml", true);
-xhttp.send();
+    <script>
 
-function myFunction(xml) {
-    var xmlDoc = xml.responseXML;
-    console.log(xmlDoc);
-    document.getElementById("demo").innerHTML = "re="+
-    xmlDoc.getElementsByTagName("cfdi:Emisor")[0].getAttribute("Rfc")+"&rr="+
-    xmlDoc.getElementsByTagName("cfdi:Receptor")[0].getAttribute("Rfc")+"&tt="+
-    xmlDoc.getElementsByTagName("cfdi:Comprobante")[0].getAttribute("Total")+"&id="+
-    xmlDoc.getElementsByTagName("tfd:TimbreFiscalDigital")[0].getAttribute("UUID")
-}
-</script>
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "text/xml");
+
+        var raw = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\"\r\n                xmlns:gs=\"http://testschema.com/hr/schemas\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <gs:startProcess>\r\n        <gs:root>\r\n         <gs:metadata>\r\n            <gs:signature>officia eu Lo</gs:signature>\r\n            <gs:source>qui adipisicing esse</gs:source>\r\n         </gs:metadata>\r\n         <gs:xmlMessage>enim et</gs:xmlMessage>\r\n        </gs:root>\r\n      </gs:startProcess>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>";
+
+
+        fetch("http://localhost:8080/ws", {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        })
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+
+
+
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        };
+        xhttp.open("GET", "http://localhost:8080/ws", true);
+        xhttp.setRequestHeader('Access-Control-Allow-Origin', '*');
+        xhttp.setRequestHeader("Content-Type", "text/xml");
+        xhttp.send('<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">' +
+            '< Body > ' +
+            '< PedirRequest xmlns = "https://t4is.uv.mx/saludos" > [any]</PedirRequest > ' +
+            '</Body > ' +
+            '</Envelope > ');
+
+
+        function myFunction(xml) {
+            var xmlDoc = xml.responseXML;
+            console.log(xmlDoc);
+            document.getElementById("demo").innerHTML = "re=" +
+                xmlDoc.getElementsByTagName("cfdi:Emisor")[0].getAttribute("Rfc") + "&rr=" +
+                xmlDoc.getElementsByTagName("cfdi:Receptor")[0].getAttribute("Rfc") + "&tt=" +
+                xmlDoc.getElementsByTagName("cfdi:Comprobante")[0].getAttribute("Total") + "&id=" +
+                xmlDoc.getElementsByTagName("tfd:TimbreFiscalDigital")[0].getAttribute("UUID")
+        }
+    </script>
 
 </body>
+
 </html>

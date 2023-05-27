@@ -20,6 +20,7 @@ import https.t4is_uv_mx.saludos.PedirUnoResponse;
 import https.t4is_uv_mx.saludos.SaludarRequest;
 import https.t4is_uv_mx.saludos.SaludarResponse;
 
+
 @Endpoint
 public class EndPoint {
     ArrayList<String> nombres = new ArrayList<String>();
